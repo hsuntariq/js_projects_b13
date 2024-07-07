@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .h {
+        transition: all 0.6s;
+        border: 2px solid red;
+        width: max-content;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="head" class="h">Salam Duniya</h1>
+
+    <button class="btn">Change Title</button>
+
+    <script>
+      const heading = document.querySelector(".h");
+      const myBtn = document.querySelector(".btn");
+
+      myBtn.addEventListener("click", () => {
+        if (heading.innerHTML == "Salam Duniya") {
+          heading.innerHTML = "Hello world";
+          heading.style.color = "red";
+          heading.style.transform = "translateX(90%) scale(2) rotate(360deg)";
+        } else {
+          heading.innerHTML = "Salam Duniya";
+          heading.style.color = "blue";
+          heading.style.transform = "translateX(0)";
+        }
+      });
+    </script>
+  </body>
+</html>
