@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        box-shadow: 1px 2px 60px 2px black inset;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      let box = document.querySelector(".box");
+      let xAxis = 0;
+      let yAxis = 0;
+      window.addEventListener("keydown", (e) => {
+        if (e.key == "ArrowRight") {
+          xAxis += 20;
+          box.style.transform = `translate(${xAxis}px,${yAxis}px)`;
+        } else if (e.key == "ArrowLeft") {
+          xAxis -= 20;
+          box.style.transform = `translate(${xAxis}px,${yAxis}px)`;
+        } else if (e.key == "ArrowDown") {
+          yAxis += 20;
+          box.style.transform = `translate(${xAxis}px,${yAxis}px)`;
+        } else if (e.key == "ArrowUp") {
+          yAxis -= 20;
+          box.style.transform = `translate(${xAxis}px,${yAxis}px)`;
+        }
+      });
+    </script>
+  </body>
+</html>

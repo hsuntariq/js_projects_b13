@@ -1,0 +1,34 @@
+.size1 {
+  width: 20px;
+  height: 20px;
+}
+.size2 {
+  width: 30px;
+  height: 30px;
+}
+.size3 {
+  width: 40px;
+  height: 40px;
+}
+.size4 {
+  width: 50px;
+  height: 50px;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+}
+
+.brush {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.canvas {
+  overflow: hidden;
+  position: relative;
+}

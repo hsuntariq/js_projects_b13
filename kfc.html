@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+      }
+      .sidebar {
+        background-color: purple;
+        height: 100vh;
+        width: 20%;
+        transition: all 0.9s;
+        position: fixed;
+        top: 0;
+        transform: translateX(-100%);
+      }
+
+      button {
+        z-index: 222;
+        align-self: flex-start;
+      }
+
+      .show {
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar test"></div>
+    <button>Open</button>
+
+    <script>
+      let btn = document.querySelector("button");
+      let sidebar = document.querySelector(".sidebar");
+      let open = false;
+      btn.addEventListener("click", () => {
+        if (open) {
+          btn.innerHTML = "open";
+          open = false;
+        } else {
+          btn.innerHTML = "close";
+          open = true;
+        }
+
+        console.log(open);
+        sidebar.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

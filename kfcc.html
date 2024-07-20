@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .underlay {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in;
+        opacity: 0;
+      }
+
+      .sidebar {
+        width: 20%;
+        background-color: red;
+        transform: translateX(-100%);
+        transition: all 0.1s ease-in;
+      }
+
+      button {
+        position: fixed;
+        top: 0;
+        z-index: 333;
+      }
+
+      .dekhao {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <button>Show</button>
+    <img
+      width="100%"
+      src="https://www.kfcpakistan.com/images/a4214300-f29b-11ee-84d7-dbdd7f31cafb-1copy_desktop_image-2024-04-04155438.jpg"
+      alt=""
+    />
+    <div class="underlay">
+      <div class="sidebar" style="height: 100vh"></div>
+    </div>
+
+    <script>
+      let btn = document.querySelector("button");
+      let underlay = document.querySelector(".underlay");
+      let sidebar = document.querySelector(".sidebar");
+      btn.addEventListener("click", () => {
+        underlay.classList.toggle("dekhao");
+        sidebar.classList.toggle("dekhao");
+      });
+
+      underlay.addEventListener("click", (e) => {
+        if (e.target.classList.contains("underlay")) {
+          underlay.classList.toggle("dekhao");
+          sidebar.classList.toggle("dekhao");
+        }
+      });
+    </script>
+  </body>
+</html>
